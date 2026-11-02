@@ -39,7 +39,7 @@ void deletelq() {
             item = a[front];
             front++;
         }
-        printf("Deleted item is %d, item");
+        printf("Deleted item is %d ",item);
     }
 }
 

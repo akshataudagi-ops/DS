@@ -74,17 +74,14 @@ int main() {
             }
             push(s);
         }
-        i++;
-        
+        i++;  
     }
     while (top != -1)
     {   
         postfix[j] = pop();
         j++;
     }
-    
     postfix[j] = '\0';
-
     printf("%s",postfix);
     return 0;
 }
