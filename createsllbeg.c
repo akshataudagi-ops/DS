@@ -30,6 +30,23 @@ struct node *createsllbeg() {
     return start;
 }
 
+struct node *insertsllbeg(struct node *start, int item){
+    struct node *p;
+    p = (struct node *)malloc(sizeof(struct node));
+    if(start == NULL){
+        p->info = item;
+        p->next = NULL;
+        start = p;
+    }
+    else{
+        p->info = item;
+        p->next = start;
+        start = p;
+    }
+    return start;
+    
+}
+
 void display(struct node *start){
     struct node *temp;
     temp = start;
@@ -42,8 +59,15 @@ void display(struct node *start){
 
 int main(){
     struct node *start;
+    int item;
     start = createsllbeg();
     display(start);
-    return 0;
-    
+
+    printf("Enter element to insert at beginning: ");
+    scanf("%d", &item);
+
+    start = insertsllbeg(start, item);
+
+    display(start);
+    return 0;   
 }
